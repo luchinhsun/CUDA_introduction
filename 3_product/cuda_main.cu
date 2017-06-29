@@ -112,8 +112,8 @@ void product2(){
 }
 
 void product3(){
-	int bpg = 256;
-	int tpb = (N+bpg-1)/bpg;
+	int tpb = 256;
+	int bpg = (N+tpb-1)/tpb;
 
 	GPU_product<<<bpg, tpb>>>(d_a, d_b, d_c);
 	cudaDeviceSynchronize();
